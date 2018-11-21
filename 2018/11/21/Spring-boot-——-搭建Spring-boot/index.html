@@ -5,15 +5,21 @@
   
 
   
-  <title>我的第一个博客</title>
+  <title>Spring boot —— 搭建Spring boot | 我的第一个博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我的第一个博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="一、Spring boot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。其实它就是一套集成好的类库，将平时搭建Spring MVC 的依赖都集成在一起，并以一种简单的约定将其运行起来。   Create stand-alone Spring applications Embed Tomcat, Jetty or Und">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring boot —— 搭建Spring boot">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/Spring-boot-——-搭建Spring-boot/index.html">
 <meta property="og:site_name" content="我的第一个博客">
+<meta property="og:description" content="一、Spring boot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。其实它就是一套集成好的类库，将平时搭建Spring MVC 的依赖都集成在一起，并以一种简单的约定将其运行起来。   Create stand-alone Spring applications Embed Tomcat, Jetty or Und">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1542765303382.png">
+<meta property="og:updated_time" content="2018-11-21T08:40:02.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一个博客">
+<meta name="twitter:title" content="Spring boot —— 搭建Spring boot">
+<meta name="twitter:description" content="一、Spring boot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。其实它就是一套集成好的类库，将平时搭建Spring MVC 的依赖都集成在一起，并以一种简单的约定将其运行起来。   Create stand-alone Spring applications Embed Tomcat, Jetty or Und">
+<meta name="twitter:image" content="http://yoursite.com/%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1542765303382.png">
   
     <link rel="alternate" href="/atom.xml" title="我的第一个博客" type="application/atom+xml">
   
@@ -60,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Spring-boot-——-搭建Spring-boot" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-Spring-boot-——-搭建Spring-boot" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/21/Spring-boot-——-搭建Spring-boot/" class="article-date">
   <time datetime="2018-11-21T01:52:18.678Z" itemprop="datePublished">2018-11-21</time>
@@ -75,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/Spring-boot-——-搭建Spring-boot/">Spring boot —— 搭建Spring boot</a>
+    <h1 class="article-title" itemprop="name">
+      Spring boot —— 搭建Spring boot
     </h1>
   
 
@@ -119,104 +123,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-flink系统——flink初识" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/20/flink系统——flink初识/" class="article-date">
-  <time datetime="2018-11-20T03:44:33.298Z" itemprop="datePublished">2018-11-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/20/flink系统——flink初识/">flink 系列文章——flink初识</a>
-    </h1>
+    <a href="/2018/11/20/flink系统——flink初识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">flink 系列文章——flink初识</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="flink是什么？"><a href="#flink是什么？" class="headerlink" title="flink是什么？"></a>flink是什么？</h2><p>​    flink作为apache的顶级项目之一，我们可以轻松找到它官网的位置<a href="http://flink.apache.org。" target="_blank" rel="noopener">http://flink.apache.org。</a></p>
-<blockquote>
-<p>Apache Flink is a framework and distributed processing engine for stateful computations over <em>unbounded and bounded</em> data streams. Flink has been designed to run in <em>all common cluster environments</em>, perform computations at <em>in-memory speed</em> and at <em>any scale</em>.</p>
-</blockquote>
-<p>  来自官网的描述：apache flink是基于有界和无界数据流状态的计算的分布式的处理引擎。Flink可以在常见的集群环境，在内存上以任何规模去运行。</p>
-<h2 id="Flink基本概念"><a href="#Flink基本概念" class="headerlink" title="Flink基本概念"></a>Flink基本概念</h2><h3 id="1、处理无界和有界的数据"><a href="#1、处理无界和有界的数据" class="headerlink" title="1、处理无界和有界的数据"></a>1、处理无界和有界的数据</h3><blockquote>
-<p>Any kind of data is produced as a stream of events. Credit card transactions, sensor measurements, machine logs, or user interactions on a website or mobile application, all of these data are generated as a stream.</p>
-</blockquote>
-<p>官网说，所有的数据可以认为是事件流。（举个栗子：信用卡交易数据、传感器测量数据、机器日志、用户在网站或移动应用程序上的交互，这些数据都可以认为是流）</p>
-<h4 id="无界数据"><a href="#无界数据" class="headerlink" title="无界数据"></a>无界数据</h4><blockquote>
-<p><strong>Unbounded streams</strong> have a start but no defined end. They do not terminate and provide data as it is generated. Unbounded streams must be continuously processed, i.e., events must be promptly handled after they have been ingested. It is not possible to wait for all input data to arrive because the input is unbounded and will not be complete at any point in time. Processing unbounded data often requires that events are ingested in a specific order, such as the order in which events occurred, to be able to reason about result completeness.</p>
-</blockquote>
-<p>​    <strong>其实这个就是说无界数据是源源不断产生的数据,flink提供了对无界数据集的持续计算。</strong>需要提供事件顺序才能推断数据结果。</p>
-<h4 id="有界数据"><a href="#有界数据" class="headerlink" title="有界数据"></a>有界数据</h4><blockquote>
-<p><strong>Bounded streams</strong> have a defined start and end. Bounded streams can be processed by ingesting all data before performing any computations. Ordered ingestion is not required to process bounded streams because a bounded data set can always be sorted. Processing of bounded streams is also known as batch processing.</p>
-</blockquote>
-<p>​        <strong>有界数据集是最终不再发生变化的数据。</strong>处理有界数据集不需要事件顺序，因为可以对这个数据进行排序，对有界数据的处理也叫批处理</p>
-<h3 id="2、Deploy-Applications-Anywhere"><a href="#2、Deploy-Applications-Anywhere" class="headerlink" title="2、Deploy Applications Anywhere"></a>2、Deploy Applications Anywhere</h3><p>​    Flink它能运行在很多常见资源调度管理器上，例如Hadoop YARN, Apache Mesos和Kubernetes。也能自己独立部署集群。Flink能自行识别所处资源环境，如果发生故障，Flink会通过请求新资源来替换发生故障的容器。提交或控制应用程序的所有通信都通过REST调用进行。</p>
-<h3 id="3、Run-Applications-at-any-Scale"><a href="#3、Run-Applications-at-any-Scale" class="headerlink" title="3、Run Applications at any Scale"></a>3、Run Applications at any Scale</h3><p>​    Flink能很容易扩展集群规模，可以轻松维护非常大的应用程序状态。 其异步和增量检查点算法确保对处理延迟的影响最小，同时保证一次性状态一致性。</p>
-<h3 id="4、Leverage-In-Memory-Performance"><a href="#4、Leverage-In-Memory-Performance" class="headerlink" title="4、Leverage In-Memory Performance"></a>4、Leverage In-Memory Performance</h3><p>​    Flink是高性能的处理引擎，它高效使用内存来计算和存储任务状态，如果可用内存满了，他会存储在访问高效的磁盘上数据结构中，因此它是低延迟的。Flink通过定期和异步检查本地状态到持久存储来保证在出现故障时的一次状态一致性。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/20/flink系统——flink初识/" data-id="cjoqyavk2000104spb9nkonui" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-我的博客" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/20/我的博客/" class="article-date">
-  <time datetime="2018-11-20T01:30:26.256Z" itemprop="datePublished">2018-11-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/20/我的博客/">我的博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/20/我的博客/" data-id="cjoqyavkg000204sp1983l42u" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
