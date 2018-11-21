@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="我的第一个博客">
 <meta property="og:description" content="一、Spring boot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。其实它就是一套集成好的类库，将平时搭建Spring MVC 的依赖都集成在一起，并以一种简单的约定将其运行起来。   Create stand-alone Spring applications Embed Tomcat, Jetty or Und">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Spring-boot-——-搭建Spring-boot/1.png">
-<meta property="og:updated_time" content="2018-11-21T09:29:20.814Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/21/Spring-boot-——-搭建Spring-boot/1.png">
+<meta property="og:updated_time" content="2018-11-21T09:31:59.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring boot —— 搭建Spring boot">
 <meta name="twitter:description" content="一、Spring boot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。其实它就是一套集成好的类库，将平时搭建Spring MVC 的依赖都集成在一起，并以一种简单的约定将其运行起来。   Create stand-alone Spring applications Embed Tomcat, Jetty or Und">
-<meta name="twitter:image" content="http://yoursite.com/Spring-boot-——-搭建Spring-boot/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/21/Spring-boot-——-搭建Spring-boot/1.png">
   
     <link rel="alternate" href="/atom.xml" title="我的第一个博客" type="application/atom+xml">
   
@@ -109,7 +109,7 @@
 </ol>
 <h4 id="二、搭建开发环境"><a href="#二、搭建开发环境" class="headerlink" title="二、搭建开发环境"></a>二、搭建开发环境</h4><h5 id="下载项目"><a href="#下载项目" class="headerlink" title="下载项目"></a>下载项目</h5><p>我们访问官网的quick start：<a href="https://start.spring.io/" target="_blank" rel="noopener">https://start.spring.io/</a></p>
 <p>写好自己项目的GA(Group Artifact),点击Generate project，如图所示</p>
-<p><img src="/../Spring-boot-——-搭建Spring-boot/1.png" alt=""></p>
+<p><img src="/2018/11/21/Spring-boot-——-搭建Spring-boot/1.png" alt=""></p>
 <p>然后，我们会得到一个压缩包。解压后，我们将项目导入IDE，我们的第一步就完成了。</p>
 <h5 id="配置依赖"><a href="#配置依赖" class="headerlink" title="配置依赖"></a>配置依赖</h5><p>在pom.xml文件里面加入</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 数据库连接池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-dbcp2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- mysql jdbc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- jsp和jSTL依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-embed-jasper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -117,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/21/Spring-boot-——-搭建Spring-boot/" data-id="cjoqyv8xn0001tcspgalvdk75" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/21/Spring-boot-——-搭建Spring-boot/" data-id="cjoqyygmj00007cspfq0hvm21" class="article-share-link">Share</a>
       
       
     </footer>
