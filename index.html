@@ -1,320 +1,1270 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
 <head><meta name="generator" content="Hexo 3.8.0">
-	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
-	<link rel="shortcut icon" href="/img/logo_miccall.png">
-	
-			    <title>
-    我的第一个博客
-    </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/css/mic_main.css">
-    <link rel="stylesheet" href="/css/dropdownMenu.css">
-    <meta name="keywords" content="miccall">
-    
-    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
-    <noscript>
-        <link rel="stylesheet" href="/css/noscript.css">
-    </noscript>
-    <style type="text/css">
-        body:before {
-          content: ' ';
-          position: fixed;
-          top: 0;
-          background: url('/img/bg.jpg') center 0 no-repeat;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-size: cover; 
-        }
-    </style>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
-			    
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="我的第一个博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="我的第一个博客">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的第一个博客">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>我的第一个博客</title>
   
 
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery.scrollex.min.js"></script>
-    <script src="/js/jquery.scrolly.min.js"></script>
-    <script src="/js/skel.min.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
-	
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
-    
-		<body class="is-loading">
-    <!-- Wrapper 外包 s-->
-    <div id="wrapper" class="fade-in overlay">
-        <!-- Intro 头部显示 s -->
-                <div id="intro">
-            <h1>This is<br>
-                        MICCALL </h1>
-            <p> Whatever is worth doing is worth doing well <br> I'll think of you every step of the way
-            </p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-            </ul>
-        </div>
-        <!-- Intro 头部显示 e -->
-        <!-- Header 头部logo start -->
-        <header id="header">
-    <a href="/" class="logo">MICCALL</a>
-</header>
-        <!-- Header 头部logo end -->
-        <!-- Nav 导航条 start -->
-        <nav id="nav" class="special">
-            <ul class="menu links">
-			<!-- Homepage  主页  --> 
-			<li>
-	            <a href="/" rel="nofollow">主页</a>
-	        </li>
-			<!-- categories_name  分类   --> 
-	        
-	        <li class="active">
-	            <a href="#s1">分类</a>
-	                    <ul class="submenu">
-	                        <li>
-	                        
-	                    </li></ul>
-	        </li>
-	        
-	        <!-- archives  归档   --> 
-	        
-	        
-		        <!-- Pages 自定义   -->
-		        
-		        <li>
-		            <a href="/about/" title="简历">
-		                简历
-		            </a>
-		        </li>
-		        
-		        <li>
-		            <a href="/group/" title="团队">
-		                团队
-		            </a>
-		        </li>
-		        
-		        <li>
-		            <a href="/gallery/" title="图库">
-		                图库
-		            </a>
-		        </li>
-		        
-		        <li>
-		            <a href="/tag/" title="标签">
-		                标签
-		            </a>
-		        </li>
-		        
 
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
 
-            </ul>
-            <!-- icons 图标   -->
-			<ul class="icons">
-                    
-                    <li>
-                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
-                            <i class="icon fa fa-github"></i>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
-                            <i class="icon fa fa-500px"></i>
-                        </a>
-                    </li>
-                    
-			</ul>
-</nav>
-        <!-- Nav 导航条 end -->
-        <!-- Main 主要部分 start -->
-        
-        <!-- Main-first -->
-                    <div id="main">
-            <!-- Main first s-->
-            <article id="me" class="panel">
-                <header style="color: #000000">
-                    <h1>Miccall Metro</h1>
-                    <p>Technical  Artist  of  Games</p>
-                </header>
-                <a href="" class="jumplink pic">
-                    <span class="arrow icon fa-chevron-right"><span></span></span>
-                    <img src="/images/me.jpg" alt="">
-                </a>
-            </article>
-            <!-- Main first e-->
-        </div>
-
-        
-        <!-- 文章列表   s -->
-        <div id="main" style="background-color: transparent; padding:0;">
-        <section class="link_container" style="margin-top: 0; background-color: transparent; ">
-            <div class="link_row">
-                <!-- 文章sample  s-->
-
-                
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/11/22/Vmware安装CentOS 6.5详细步骤/">
-                        <div class="page_title" style="background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> Vmware安装centOS 6.5(minimal)详细步骤 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-11-22</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                </a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/11/21/Spring-boot-——-搭建Spring-boot/">
-                        <div class="page_title" style="background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> Spring boot —— 搭建Spring boot </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-11-21</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                </a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/11/20/flink系统——flink初识/">
-                        <div class="page_title" style="background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> flink 系列文章——1、flink初识 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-11-20</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                </a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
-                       <a href="/2018/11/20/我的博客/">
-                        <div class="page_title" style="background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> 我的博客 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-11-20</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                </a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-            </div>
-        </section>
-        </div>
-        <!-- 文章列表   end -->
-        <!-- Main 主要部分 end -->
-        <!-- footer  页码 start-->
-        <footer style="text-align: center; padding-top: 2em;">
   
-</footer>
+  
+    
+  
 
-        <!-- footer  页码 end-->
-        <!-- Copyright 版权 start -->
-                <div id="copyright">
-            <ul>
-                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
-                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
-            </ul>
-            
-                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-			
-        </div>
-        <!-- Copyright 版权 end -->
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的第一个博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <!-- Wrapper 外包 e-->
-    <!-- Scripts -->
-</body>
+    
+  </div>
 
- 	
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/Vmware安装CentOS 6.5详细步骤/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fenian7788">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的第一个博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/22/Vmware安装CentOS 6.5详细步骤/" class="post-title-link" itemprop="http://yoursite.com/index.html">Vmware安装centOS 6.5(minimal)详细步骤</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-22 11:36:59 / Updated at: 14:31:27" itemprop="dateCreated datePublished" datetime="2018-11-22T11:36:59+08:00">2018-11-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​    我今天整理了一下Vmware安装centOS 6.5详细步骤</p>
+<p>​    Vmware我使用的是14版本的。具体安装步骤就略过了！下面开始我们的CentOS 6.5的系统安装</p>
+<p>1.新建虚拟机,点击确定</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/1.png" alt=""></p>
+<p>2.我们使用自定义的，然后会弹出下图，点击下一步</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/2.png" alt=""></p>
+<p>3.选择稍后安装操作系统</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/3.png" alt=""></p>
+<p>4.选择Linux 和版本 CentOS 6 64位</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/4.png" alt=""></p>
+<p>5.输入我们的虚拟机名称和所在的硬盘位置。</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/5.png" alt=""></p>
+<p>6.配置处理器数据量和核数，这个默认就好</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/6.png" alt=""></p>
+<p>7.配置虚拟机的内存，这个根据你的需要，后面如果不够还能改，这里我设置3G</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/7.png" alt=""></p>
+<p>8.设置网络连接方式，默认即可</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/8.png" alt=""></p>
+<p>9.选择IO控制器类型，默认即可</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/9.png" alt=""></p>
+<p>10.选择磁盘类型，默认即可。</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/10.png" alt=""></p>
+<p>11.创建新的虚拟磁盘，点击下一步</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/11.png" alt=""></p>
+<p>12.配置你的虚拟机的硬盘大小，这里我给了40G</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/12.png" alt=""></p>
+<p>13.下一步即可</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/13.png" alt=""></p>
+<p>14.点击完成.</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/14.png" alt=""></p>
+<p>15.如图所示，点击编辑虚拟机设置</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/15.png" alt=""></p>
+<p>16.设置我们的镜像文件</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/16.png" alt=""></p>
+<p>17.开启我们的虚拟机开始安装CentOS 6.5</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/17.png" alt=""></p>
+<p>18.开启虚拟机后，会如下图所示，选择第一个选项即可</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/18.png" alt=""></p>
+<p>19.利用上下左右键选中skip，然后回车，这里是询问是否确认镜像文件是完整的，下载的镜像文件没问题，这里直接跳过即可，进入系统安装界面 </p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/19.png" alt=""></p>
+<p>20.这里有个警告，我们点击OK即可</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/20.png" alt=""></p>
+<p>21.点击next</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/21.png" alt=""></p>
+<p>22.选择我们语言，这里装个B，选择English</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/22.png" alt=""></p>
+<p>23.选择键盘,我选的是US</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/23.png" alt=""></p>
+<p>24.选择我们的存储设备，第一个是基础存储设备，第二个是指定的。我们选第一个即可</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/24.png" alt=""></p>
+<p>25.这里警告我们设置的磁盘空间可能包含数据(其实没有)，我们选择是的，忽略所有数据</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/25.png" alt=""></p>
+<p>26.配置我们的hostname</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/26.png" alt=""></p>
+<p>27.设置我们的时区</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/27.png" alt=""></p>
+<p>28.设置root用户的密码</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/28.png" alt=""></p>
+<p>29.创建自定义分区</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/29.png" alt=""></p>
+<p>30.create新分区</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/30.png" alt=""></p>
+<p>31.选择标准分区，点击create</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/31.png" alt=""></p>
+<p>32.设置/boot分区为200M</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/32.png" alt=""></p>
+<p>33.设置swap分区2048M</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/33.png" alt=""></p>
+<p>34.设置/根目录获取剩下的磁盘空间</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/34.png" alt=""></p>
+<p>35.分区总览，一般是/boot下面200M，swap分区2G，剩余的都给根目录/</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/35.png" alt=""></p>
+<p>36.点击next，会弹出格式化警告，我们点击format</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/36.png" alt=""></p>
+<p>37.这个步骤说需要写配置进入我们的硬盘，这个点击write changes to disk</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/37.png" alt=""></p>
+<p>38.点击下一步</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/38.png" alt=""></p>
+<p>39.这里选择最小化安装，然后选择customize now，点击next</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/39.png" alt=""></p>
+<p>40.可以选择一些预安装的服务，然后点击next,如图所示</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/40.png" alt=""></p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/41.png" alt=""></p>
+<p>41.最后重启。</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/42.png" alt=""></p>
+<p>42.我们需要在VMware上面配置一下网络，打开 编辑–&gt;虚拟网络编辑</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/43.png" alt=""></p>
+<p>43.我们之前设置的网络类型是NAT模式，需要选中NAT模式，点击DHCP设置</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/44.png" alt=""></p>
+<p>44.设置我们的虚拟网络的网关，在42步骤的界面上选择NAT设置</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/45.png" alt=""></p>
+<p>45.我们需要配置我们虚拟机的ip</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=00:0C:29:65:28:D9</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">UUID=c206e490-daa4-45a3-9c24-372709e38ee5</span><br><span class="line">ONBOOT=yes</span><br><span class="line">NM_CONTROLLED=no</span><br><span class="line"><span class="meta">#</span>BOOTPROTO=dhcp</span><br><span class="line">BOOTPROTO="static"</span><br><span class="line">IP=192.168.137.190</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.137.2</span><br><span class="line">DNS1=192.168.43.1</span><br></pre></td></tr></table></figure>
+<p>​    其中IPADDR的地址要在我们43步骤设置的范围里面，NETMASK一般是255.255.255.0，GATEWAY是我们设置44步骤，DNS1是我们windows cmd里面打</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig -all</span><br></pre></td></tr></table></figure>
+<p>获取DNS，如图所示</p>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/46.png" alt=""></p>
+<p>46.关掉防火墙</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>service iptables stop</span><br></pre></td></tr></table></figure>
+<p>47.禁止自启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chkconfig iptables off</span><br></pre></td></tr></table></figure>
+<p>48.网卡重启</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>service network restart</span><br></pre></td></tr></table></figure>
+<p>49.我们可以试试ping 一下<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/47.png" alt=""></p>
+<p>如图所示，我们的centOS 就部署好了！</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/Spring-boot-——-搭建Spring-boot/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fenian7788">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的第一个博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/21/Spring-boot-——-搭建Spring-boot/" class="post-title-link" itemprop="http://yoursite.com/index.html">Spring boot —— 搭建Spring boot</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-21 09:52:18 / Updated at: 17:38:49" itemprop="dateCreated datePublished" datetime="2018-11-21T09:52:18+08:00">2018-11-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="一、Spring-boot简介"><a href="#一、Spring-boot简介" class="headerlink" title="一、Spring boot简介"></a>一、Spring boot简介</h4><p><em>Spring Boot</em>是由Pivotal团队提供的全新框架，其设计目的是用来简化新<em>Spring</em>应用的初始搭建以及开发过程。其实它就是一套集成好的类库，将平时搭建Spring MVC 的依赖都集成在一起，并以一种简单的约定将其运行起来。</p>
+<blockquote>
+<ul>
+<li>Create stand-alone Spring applications</li>
+<li>Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)</li>
+<li>Provide opinionated ‘starter’ dependencies to simplify your build configuration</li>
+<li>Automatically configure Spring and 3rd party libraries whenever possible</li>
+<li>Provide production-ready features such as metrics, health checks and externalized configuration</li>
+<li>Absolutely no code generation and no requirement for XML configuration</li>
+</ul>
+</blockquote>
+<p>官网描述有5个特性：</p>
+<ol>
+<li>能独立运行的Spring应用</li>
+<li>内嵌Tomcat、Jetty或者Undertow (无需WAR包)</li>
+<li>提供自用的start依赖去简化你的开发环境搭建</li>
+<li>尽可能自动配置Spring和第三方的类库</li>
+<li>没有代码生成，也无需XML配置。</li>
+</ol>
+<h4 id="二、搭建开发环境"><a href="#二、搭建开发环境" class="headerlink" title="二、搭建开发环境"></a>二、搭建开发环境</h4><h5 id="下载项目"><a href="#下载项目" class="headerlink" title="下载项目"></a>下载项目</h5><p>我们访问官网的quick start：<a href="https://start.spring.io/" target="_blank" rel="noopener">https://start.spring.io/</a></p>
+<p>写好自己项目的GA(Group Artifact),点击Generate project，如图所示</p>
+<p><img src="/2018/11/21/Spring-boot-——-搭建Spring-boot/1.png" alt=""></p>
+<p>然后，我们会得到一个压缩包。解压后，我们将项目导入IDE，我们的第一步就完成了。</p>
+<h5 id="配置依赖"><a href="#配置依赖" class="headerlink" title="配置依赖"></a>配置依赖</h5><p>在pom.xml文件里面加入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 数据库连接池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-dbcp2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- mysql jdbc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- jsp和jSTL依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-embed-jasper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/flink系统——flink初识/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fenian7788">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的第一个博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/20/flink系统——flink初识/" class="post-title-link" itemprop="http://yoursite.com/index.html">flink 系列文章——1、flink初识</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-20 11:44:33" itemprop="dateCreated datePublished" datetime="2018-11-20T11:44:33+08:00">2018-11-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-11-21 17:53:02" itemprop="dateModified" datetime="2018-11-21T17:53:02+08:00">2018-11-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="flink是什么？"><a href="#flink是什么？" class="headerlink" title="flink是什么？"></a>flink是什么？</h2><p>​    flink作为apache的顶级项目之一，我们可以轻松找到它官网的位置<a href="http://flink.apache.org。" target="_blank" rel="noopener">http://flink.apache.org。</a></p>
+<blockquote>
+<p>Apache Flink is a framework and distributed processing engine for stateful computations over <em>unbounded and bounded</em> data streams. Flink has been designed to run in <em>all common cluster environments</em>, perform computations at <em>in-memory speed</em> and at <em>any scale</em>.</p>
+</blockquote>
+<p>  来自官网的描述：apache flink是基于有界和无界数据流状态的计算的分布式的处理引擎。Flink可以在常见的集群环境，在内存上以任何规模去运行。</p>
+<h2 id="Flink基本概念"><a href="#Flink基本概念" class="headerlink" title="Flink基本概念"></a>Flink基本概念</h2><h3 id="1、处理无界和有界的数据"><a href="#1、处理无界和有界的数据" class="headerlink" title="1、处理无界和有界的数据"></a>1、处理无界和有界的数据</h3><blockquote>
+<p>Any kind of data is produced as a stream of events. Credit card transactions, sensor measurements, machine logs, or user interactions on a website or mobile application, all of these data are generated as a stream.</p>
+</blockquote>
+<p>官网说，所有的数据可以认为是事件流。（举个栗子：信用卡交易数据、传感器测量数据、机器日志、用户在网站或移动应用程序上的交互，这些数据都可以认为是流）</p>
+<h4 id="无界数据"><a href="#无界数据" class="headerlink" title="无界数据"></a>无界数据</h4><blockquote>
+<p><strong>Unbounded streams</strong> have a start but no defined end. They do not terminate and provide data as it is generated. Unbounded streams must be continuously processed, i.e., events must be promptly handled after they have been ingested. It is not possible to wait for all input data to arrive because the input is unbounded and will not be complete at any point in time. Processing unbounded data often requires that events are ingested in a specific order, such as the order in which events occurred, to be able to reason about result completeness.</p>
+</blockquote>
+<p>​    <strong>其实这个就是说无界数据是源源不断产生的数据,flink提供了对无界数据集的持续计算。</strong>需要提供事件顺序才能推断数据结果。</p>
+<h4 id="有界数据"><a href="#有界数据" class="headerlink" title="有界数据"></a>有界数据</h4><blockquote>
+<p><strong>Bounded streams</strong> have a defined start and end. Bounded streams can be processed by ingesting all data before performing any computations. Ordered ingestion is not required to process bounded streams because a bounded data set can always be sorted. Processing of bounded streams is also known as batch processing.</p>
+</blockquote>
+<p>​        <strong>有界数据集是最终不再发生变化的数据。</strong>处理有界数据集不需要事件顺序，因为可以对这个数据进行排序，对有界数据的处理也叫批处理</p>
+<h3 id="2、Deploy-Applications-Anywhere"><a href="#2、Deploy-Applications-Anywhere" class="headerlink" title="2、Deploy Applications Anywhere"></a>2、Deploy Applications Anywhere</h3><p>​    Flink它能运行在很多常见资源调度管理器上，例如Hadoop YARN, Apache Mesos和Kubernetes。也能自己独立部署集群。Flink能自行识别所处资源环境，如果发生故障，Flink会通过请求新资源来替换发生故障的容器。提交或控制应用程序的所有通信都通过REST调用进行。</p>
+<h3 id="3、Run-Applications-at-any-Scale"><a href="#3、Run-Applications-at-any-Scale" class="headerlink" title="3、Run Applications at any Scale"></a>3、Run Applications at any Scale</h3><p>​    Flink能很容易扩展集群规模，可以轻松维护非常大的应用程序状态。 其异步和增量检查点算法确保对处理延迟的影响最小，同时保证一次性状态一致性。</p>
+<h3 id="4、Leverage-In-Memory-Performance"><a href="#4、Leverage-In-Memory-Performance" class="headerlink" title="4、Leverage In-Memory Performance"></a>4、Leverage In-Memory Performance</h3><p>​    Flink是高性能的处理引擎，它高效使用内存来计算和存储任务状态，如果可用内存满了，他会存储在访问高效的磁盘上数据结构中，因此它是低延迟的。Flink通过定期和异步检查本地状态到持久存储来保证在出现故障时的一次状态一致性。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/我的博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fenian7788">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的第一个博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/20/我的博客/" class="post-title-link" itemprop="http://yoursite.com/index.html">我的博客</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-20 09:30:26 / Updated at: 15:13:23" itemprop="dateCreated datePublished" datetime="2018-11-20T09:30:26+08:00">2018-11-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">fenian7788</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fenian7788</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
