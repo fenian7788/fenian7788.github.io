@@ -108,24 +108,30 @@
 
 
 
-  <meta name="description" content="​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步">
+  <meta name="description" content="准备工作 1.准备好3台虚拟机 2.3台虚拟机互信 3.准备好安装包  jdk-8u161-linux-x64.tar.gz hadoop-2.6.0-cdh5.7.0.tar.gz zookeeper-3.4.12.tar.gz   4.Xshell5  新增用户hadoop在3台虚拟机上面都新建一个hadoop用户 1# useradd hadoop  安装JDK创建java存放路径12#">
+<meta name="keywords" content="hadoop,HDFS,YARN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/我的博客/index.html">
+<meta property="og:title" content="2.搭建Hadoop HA">
+<meta property="og:url" content="http://yoursite.com/2018/11/26/2.搭建Hadoop HA/index.html">
 <meta property="og:site_name" content="我的第一个博客">
-<meta property="og:description" content="​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步">
+<meta property="og:description" content="准备工作 1.准备好3台虚拟机 2.3台虚拟机互信 3.准备好安装包  jdk-8u161-linux-x64.tar.gz hadoop-2.6.0-cdh5.7.0.tar.gz zookeeper-3.4.12.tar.gz   4.Xshell5  新增用户hadoop在3台虚拟机上面都新建一个hadoop用户 1# useradd hadoop  安装JDK创建java存放路径12#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T16:10:00.894Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/26/2.搭建Hadoop%20HA/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/26/2.搭建Hadoop%20HA/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/26/2.搭建Hadoop%20HA/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/26/2.搭建Hadoop%20HA/4.png">
+<meta property="og:updated_time" content="2018-11-26T17:39:33.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步">
+<meta name="twitter:title" content="2.搭建Hadoop HA">
+<meta name="twitter:description" content="准备工作 1.准备好3台虚拟机 2.3台虚拟机互信 3.准备好安装包  jdk-8u161-linux-x64.tar.gz hadoop-2.6.0-cdh5.7.0.tar.gz zookeeper-3.4.12.tar.gz   4.Xshell5  新增用户hadoop在3台虚拟机上面都新建一个hadoop用户 1# useradd hadoop  安装JDK创建java存放路径12#">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/26/2.搭建Hadoop%20HA/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/我的博客/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/26/2.搭建Hadoop HA/">
 
 
 
@@ -135,7 +141,7 @@
   };
 </script>
 
-  <title>我的博客 | 我的第一个博客</title>
+  <title>2.搭建Hadoop HA | 我的第一个博客</title>
   
 
 
@@ -346,12 +352,12 @@
 
   
 
-  <article class="post post-type-about" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/我的博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/2.搭建Hadoop HA/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fenian7788">
@@ -368,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的博客
+          <h1 class="post-title" itemprop="name headline">2.搭建Hadoop HA
               
             
           </h1>
@@ -393,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2018-11-20 09:30:26" itemprop="dateCreated datePublished" datetime="2018-11-20T09:30:26+08:00">2018-11-20</time>
+              <time title="创建时间：2018-11-26 22:52:42" itemprop="dateCreated datePublished" datetime="2018-11-26T22:52:42+08:00">2018-11-26</time>
             
 
             
@@ -410,11 +416,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-27 00:10:00" itemprop="dateModified" datetime="2018-11-27T00:10:00+08:00">2018-11-27</time>
+                <time title="修改时间：2018-11-27 01:39:33" itemprop="dateModified" datetime="2018-11-27T01:39:33+08:00">2018-11-27</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Big-Data-learning/" itemprop="url" rel="index"><span itemprop="name">Big Data learning</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -443,10 +467,39 @@
       
 
       
-        <p>​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=186724&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22198090&auto=1&height=66"></iframe>
 
-
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>1.准备好3台<a href="https://fenian7788.github.io/2018/11/22/Vmware%E5%AE%89%E8%A3%85CentOS%206.5%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/?_blank" target="_blank" rel="noopener">虚拟机</a></li>
+<li>2.3台<a href="">虚拟机互信</a></li>
+<li>3.准备好安装包 <ul>
+<li>jdk-8u161-linux-x64.tar.gz</li>
+<li>hadoop-2.6.0-cdh5.7.0.tar.gz</li>
+<li>zookeeper-3.4.12.tar.gz</li>
+</ul>
+</li>
+<li>4.Xshell5</li>
+</ul>
+<h1 id="新增用户hadoop"><a href="#新增用户hadoop" class="headerlink" title="新增用户hadoop"></a>新增用户hadoop</h1><p>在3台虚拟机上面都新建一个hadoop用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> useradd hadoop</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/26/2.搭建Hadoop HA/1.png" alt=""></p>
+<h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><h2 id="创建java存放路径"><a href="#创建java存放路径" class="headerlink" title="创建java存放路径"></a>创建java存放路径</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> mkdir -p /usr/java</span><br><span class="line"><span class="meta">#</span> cd /usr/java</span><br></pre></td></tr></table></figure>
+<h2 id="上传jdk压缩包"><a href="#上传jdk压缩包" class="headerlink" title="上传jdk压缩包"></a>上传jdk压缩包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> rz</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/26/2.搭建Hadoop HA/2.png" alt=""></p>
+<h2 id="解压jdk压缩包"><a href="#解压jdk压缩包" class="headerlink" title="解压jdk压缩包"></a>解压jdk压缩包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> tar -xzvf jdk-8u161-linux-x64.tar.gz</span><br><span class="line"><span class="meta">#</span> rm -f jdk-8u161-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="传输到其他两台"><a href="#传输到其他两台" class="headerlink" title="传输到其他两台"></a>传输到其他两台</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp -r jdk1.8.0_161 root@hadoop002:/usr/java</span><br><span class="line"><span class="meta">#</span> scp -r jdk1.8.0_161 root@hadoop003:/usr/java</span><br></pre></td></tr></table></figure>
+<h2 id="修改三台机子上的jdk的持有者"><a href="#修改三台机子上的jdk的持有者" class="headerlink" title="修改三台机子上的jdk的持有者"></a>修改三台机子上的jdk的持有者</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> chown -R root:root /usr/java</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/26/2.搭建Hadoop HA/3.png" alt=""></p>
+<h2 id="配置JDK环境变量"><a href="#配置JDK环境变量" class="headerlink" title="配置JDK环境变量"></a>配置JDK环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vi /etc/profile</span><br></pre></td></tr></table></figure>
+<p>在文件的末尾加入，以下语句，并保存</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>env</span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_161</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>使配置生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> source /etc/profile</span><br></pre></td></tr></table></figure>
+<p>查看jdk是否成功安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> java -version</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/26/2.搭建Hadoop HA/4.png" alt=""></p>
+<p>在另外两台机子也一样做一遍，至此我们的jdk就安装完成了！</p>
+<h1 id="安装ZK"><a href="#安装ZK" class="headerlink" title="安装ZK"></a>安装ZK</h1>
       
     </div>
 
@@ -467,6 +520,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/hadoop/" rel="tag"># hadoop</a>
+          
+            <a href="/tags/HDFS/" rel="tag"># HDFS</a>
+          
+            <a href="/tags/YARN/" rel="tag"># YARN</a>
+          
+        </div>
+      
 
       
       
@@ -476,14 +539,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/25/1.Hadoop高级/" rel="next" title="1.Hadoop高级">
+                <i class="fa fa-chevron-left"></i> 1.Hadoop高级
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/20/1.flink初识/" rel="prev" title="1.flink初识">
-                1.flink初识 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/27/linux ssh互信配置/" rel="prev" title="linux ssh互信配置">
+                linux ssh互信配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -529,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -624,6 +700,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新增用户hadoop"><span class="nav-number">2.</span> <span class="nav-text">新增用户hadoop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装JDK"><span class="nav-number">3.</span> <span class="nav-text">安装JDK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建java存放路径"><span class="nav-number">3.1.</span> <span class="nav-text">创建java存放路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传jdk压缩包"><span class="nav-number">3.2.</span> <span class="nav-text">上传jdk压缩包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解压jdk压缩包"><span class="nav-number">3.3.</span> <span class="nav-text">解压jdk压缩包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输到其他两台"><span class="nav-number">3.4.</span> <span class="nav-text">传输到其他两台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改三台机子上的jdk的持有者"><span class="nav-number">3.5.</span> <span class="nav-text">修改三台机子上的jdk的持有者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置JDK环境变量"><span class="nav-number">3.6.</span> <span class="nav-text">配置JDK环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装ZK"><span class="nav-number">4.</span> <span class="nav-text">安装ZK</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

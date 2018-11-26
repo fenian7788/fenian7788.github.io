@@ -108,24 +108,31 @@
 
 
 
-  <meta name="description" content="​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步">
+  <meta name="description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rs">
+<meta name="keywords" content="vmware,centos">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/我的博客/index.html">
+<meta property="og:title" content="linux ssh互信配置">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/linux ssh互信配置/index.html">
 <meta property="og:site_name" content="我的第一个博客">
-<meta property="og:description" content="​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步">
+<meta property="og:description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rs">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T16:10:00.894Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/7.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/8.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/9.png">
+<meta property="og:updated_time" content="2018-11-26T17:37:32.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步">
+<meta name="twitter:title" content="linux ssh互信配置">
+<meta name="twitter:description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rs">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/5.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/我的博客/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/27/linux ssh互信配置/">
 
 
 
@@ -135,7 +142,7 @@
   };
 </script>
 
-  <title>我的博客 | 我的第一个博客</title>
+  <title>linux ssh互信配置 | 我的第一个博客</title>
   
 
 
@@ -346,12 +353,12 @@
 
   
 
-  <article class="post post-type-about" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/我的博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/linux ssh互信配置/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fenian7788">
@@ -368,7 +375,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的博客
+          <h1 class="post-title" itemprop="name headline">linux ssh互信配置
               
             
           </h1>
@@ -393,28 +400,34 @@
                 
               
 
-              <time title="创建时间：2018-11-20 09:30:26" itemprop="dateCreated datePublished" datetime="2018-11-20T09:30:26+08:00">2018-11-20</time>
+              <time title="创建时间：2018-11-27 00:56:13 / 修改时间：01:37:32" itemprop="dateCreated datePublished" datetime="2018-11-27T00:56:13+08:00">2018-11-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-27 00:10:00" itemprop="dateModified" datetime="2018-11-27T00:10:00+08:00">2018-11-27</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Vmware安装CentOS/" itemprop="url" rel="index"><span itemprop="name">Vmware安装CentOS</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -443,9 +456,32 @@
       
 
       
-        <p>​     这里博客仅供参考，主要是个人整理所得。希望大家一起进步</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=186724&auto=1&height=66"></iframe>
-
+        <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>hadoop001: 192.168.137.190</p>
+<p>hadoop002: 192.168.137.191</p>
+<p>hadoop003: 192.168.137.192</p>
+<h1 id="执行ssh-keygen"><a href="#执行ssh-keygen" class="headerlink" title="执行ssh-keygen"></a>执行ssh-keygen</h1><p>在3台机子上都执行下面命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ssh-keygen</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/27/linux ssh互信配置/5.png" alt=""></p>
+<p>在第一个hadoop001上面，生成一个<strong>authorized_keys</strong>文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cd /root/.ssh</span><br><span class="line"><span class="meta">#</span> cat /root/.ssh/id_rsa.pub&gt;&gt; /root/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/27/linux ssh互信配置/6.png" alt=""></p>
+<p>然后将其他台机子上的id_rsa.pub内容,手动copy到第一台的authorized_keys文件中</p>
+<p>先把第二台的公钥拉取过来,需要键入密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp root@hadoop002:/root/.ssh/id_rsa.pub id_rsa.pub002</span><br></pre></td></tr></table></figure>
+<p>再把第三台的公钥拉取过来,需要键入密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp root@hadoop003:/root/.ssh/id_rsa.pub id_rsa.pub003</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/27/linux ssh互信配置/7.png" alt=""></p>
+<p>然后将其内容复制到authorized_keys中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cat id_rsa.pub002 &gt;&gt; authorized_keys</span><br><span class="line"><span class="meta">#</span> cat id_rsa.pub003 &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/27/linux ssh互信配置/8.png" alt=""></p>
+<p>然后将authorized_keys文件发送给另外两台机子,需要键入密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp authorized_keys root@hadoop002:/root/.ssh/</span><br><span class="line"><span class="meta">#</span> scp authorized_keys root@hadoop003:/root/.ssh/</span><br></pre></td></tr></table></figure>
+<p>然后删除之前拉取的id_rsa.pub002,id_rsa.pub003文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> rm -f id_rsa.pub002</span><br><span class="line"><span class="meta">#</span> rm -f id_rsa.pub003</span><br></pre></td></tr></table></figure>
+<p>然后3台机子一起赋权</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> chmod 700 -R ~/.ssh</span><br><span class="line"><span class="meta">#</span> chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p>验证,第一次使用ssh会需要键入yes</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ssh root@hadoop001 date</span><br><span class="line"><span class="meta">#</span> ssh root@hadoop002 date</span><br><span class="line"><span class="meta">#</span> ssh root@hadoop003 date</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/27/linux ssh互信配置/9.png" alt=""></p>
 
       
     </div>
@@ -467,6 +503,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/vmware/" rel="tag"># vmware</a>
+          
+            <a href="/tags/centos/" rel="tag"># centos</a>
+          
+        </div>
+      
 
       
       
@@ -476,15 +520,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/26/2.搭建Hadoop HA/" rel="next" title="2.搭建Hadoop HA">
+                <i class="fa fa-chevron-left"></i> 2.搭建Hadoop HA
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/20/1.flink初识/" rel="prev" title="1.flink初识">
-                1.flink初识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -624,6 +677,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行ssh-keygen"><span class="nav-number">2.</span> <span class="nav-text">执行ssh-keygen</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
