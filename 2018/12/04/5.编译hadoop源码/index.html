@@ -108,21 +108,21 @@
 
 
 
-  <meta name="description" content="上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库: repo 编译准备编译前我">
+  <meta name="description" content="上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库:repo 编译准备编译前我们">
 <meta name="keywords" content="hadoop,HDFS,YARN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.编译hadoop源码">
 <meta property="og:url" content="http://yoursite.com/2018/12/04/5.编译hadoop源码/index.html">
 <meta property="og:site_name" content="我的第一个博客">
-<meta property="og:description" content="上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库: repo 编译准备编译前我">
+<meta property="og:description" content="上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库:repo 编译准备编译前我们">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/12/04/5.编译hadoop源码/2.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/04/5.编译hadoop源码/1.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/04/5.编译hadoop源码/3.png">
-<meta property="og:updated_time" content="2018-12-03T17:47:28.244Z">
+<meta property="og:updated_time" content="2018-12-03T17:58:20.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5.编译hadoop源码">
-<meta name="twitter:description" content="上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库: repo 编译准备编译前我">
+<meta name="twitter:description" content="上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库:repo 编译准备编译前我们">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/04/5.编译hadoop源码/2.png">
 
 
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2018-12-04 00:54:29 / 修改时间：01:47:28" itemprop="dateCreated datePublished" datetime="2018-12-04T00:54:29+08:00">2018-12-04</time>
+              <time title="创建时间：2018-12-04 00:54:29 / 修改时间：01:58:20" itemprop="dateCreated datePublished" datetime="2018-12-04T00:54:29+08:00">2018-12-04</time>
             
 
             
@@ -486,9 +486,9 @@
         <p>  上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。</p>
 <h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>Linux环境：CentOS 6.5</p>
 <p>jdk版本：jdk1.7<font color="red">（注：pom文件里面很多注明了1.7，所以最好用1.7编译）</font></p>
-<p>maven版本：<a href="http://mirrors.hust.edu.cn/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz" target="_blank" rel="noopener">apache-maven-3.6.0</a></p>
-<p>Hadoop版本：<a href="http://archive-primary.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0-src.tar.gz" target="_blank" rel="noopener">hadoop-2.6.0-cdh5.7.0</a></p>
-<p>依赖jar包库: <a href="https://pan.baidu.com/s/1GObRvOIIHg8rYdLcZmpyyg" target="_blank" rel="noopener">repo</a></p>
+<p>maven版本：<a href="http://mirrors.hust.edu.cn/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz" target="_blank">apache-maven-3.6.0</a></p>
+<p>Hadoop版本：<a href="http://archive-primary.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0-src.tar.gz" target="_blank">hadoop-2.6.0-cdh5.7.0</a></p>
+<p>依赖jar包库:<a href="https://pan.baidu.com/s/1GObRvOIIHg8rYdLcZmpyyg" target="_blank">repo</a></p>
 <h1 id="编译准备"><a href="#编译准备" class="headerlink" title="编译准备"></a>编译准备</h1><p>编译前我们需要做如下几步：</p>
 <ul>
 <li><p>创建hadoop用户，并在家目录创建app source software repo等目录</p>
