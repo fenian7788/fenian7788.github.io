@@ -40,18 +40,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[1.编译Hadoop源码]]></title>
-    <url>%2F2018%2F12%2F01%2F1.%E7%BC%96%E8%AF%91hadoop%E6%BA%90%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[环境说明 操作系统为 linux CentOS 6.5 64位 JDK1.8 maven3.6.0 hadoop 用户 家目录下有 app software source repo等目录 准备好压缩包 hadoop-2.6.0-cdh5.7.0-src.tar.gz 解压hadoop源码包​ 我们的hadoop-2.6.0-cdh5.7.0-src.tar.gz在hadoop用户下的software包里 123# su - hadoop$ cd software/$ tar -zxvf hadoop-2.6.0-cdh5.7.0-src.tar.gz -C ../source 编译hadoop源码12$ cd ~/source/hadoop-2.6.0-cdh5.7.0$ mvn clean package -Dmaven.test.skip=true 然后maven就会帮我们下载所需依赖，如果第一次下，这个过程比较久。]]></content>
-      <categories>
-        <category>作业</category>
-      </categories>
-      <tags>
-        <tag>hadoop</tag>
-        <tag>building</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[linux ssh互信配置]]></title>
     <url>%2F2018%2F11%2F27%2Flinux%20ssh%E4%BA%92%E4%BF%A1%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen 在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rsa.pub&gt;&gt; /root/.ssh/authorized_keys 然后将其他台机子上的id_rsa.pub内容,手动copy到第一台的authorized_keys文件中 先把第二台的公钥拉取过来,需要键入密码 1# scp root@hadoop002:/root/.ssh/id_rsa.pub id_rsa.pub002 再把第三台的公钥拉取过来,需要键入密码 1# scp root@hadoop003:/root/.ssh/id_rsa.pub id_rsa.pub003 然后将其内容复制到authorized_keys中 12# cat id_rsa.pub002 &gt;&gt; authorized_keys# cat id_rsa.pub003 &gt;&gt; authorized_keys 然后将authorized_keys文件发送给另外两台机子,需要键入密码 12# scp authorized_keys root@hadoop002:/root/.ssh/# scp authorized_keys root@hadoop003:/root/.ssh/ 然后删除之前拉取的id_rsa.pub002,id_rsa.pub003文件 12# rm -f id_rsa.pub002# rm -f id_rsa.pub003 然后3台机子一起赋权 12# chmod 700 -R ~/.ssh# chmod 600 ~/.ssh/authorized_keys 验证,第一次使用ssh会需要键入yes 123# ssh root@hadoop001 date# ssh root@hadoop002 date# ssh root@hadoop003 date]]></content>
