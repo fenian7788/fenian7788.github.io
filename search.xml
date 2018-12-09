@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[安装LZO]]></title>
+    <url>%2F2018%2F12%2F09%2F%E5%AE%89%E8%A3%85LZO%2F</url>
+    <content type="text"><![CDATA[环境Linux版本： CentOS 6.5 jdk版本： JDK1.8 hadoop版本： 2.6.0-cdh5.7.0 参考： github上的LZO项目 安装类库安装一些依赖的类库 1# yum -y install lzo-devel zlib-devel gcc autoconf automake libtool 下载、解压LZO123$ cd ~/software$ wget http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz$ tar -zxvf lzo-2.10.tar.gz -C ../source 编译LZO包123$ cd ~/source/lzo-2.10$./configure --enable-shared --prefix /usr/local/lzo-2.10$ make &amp;&amp; sudo make install 下载Hadoop-LZO123$ cd ~/software$ wget https://github.com/twitter/hadoop-lzo/archive/master.zip$ unzip master.zip -d ../source 修改Hadoop-LZO pom12$ cd ~/source/hadoop-lzo-master$ vi pom.xml 添加cloudera仓库12345678910111213141516&lt;repositories&gt; &lt;repository&gt; &lt;id&gt;cloudera-repo&lt;/id&gt; &lt;url&gt;https://repository.cloudera.com/artifactory/cloudera-repos&lt;/url&gt; &lt;/repository&gt; &lt;repository&gt; &lt;id&gt;sonatype-nexus-snapshots&lt;/id&gt; &lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; 修改hadoop版本123456&lt;properties&gt; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; &lt;!-- &lt;hadoop.current.version&gt;2.6.4&lt;/hadoop.current.version&gt;--&gt; &lt;hadoop.current.version&gt;2.6.0-cdh5.7.0&lt;/hadoop.current.version&gt; &lt;hadoop.old.version&gt;1.0.4&lt;/hadoop.old.version&gt; &lt;/properties&gt; 编译Hadoop-LZO123456789$ C_INCLUDE_PATH=/usr/local/lzo-2.06/include \ LIBRARY_PATH=/usr/local/lzo-2.06/lib \ mvn clean package $ cd target/native/Linux-amd64-64$ tar -cBf - -C lib . | tar -xBvf - -C ~$ mv ~/libgplcompression* $HADOOP_HOME/lib/native/$ cp target/hadoop-lzo-0.4.18-SNAPSHOT.jar \ $HADOOP_HOME/share/hadoop/common/ 配置Hadoop环境变量修改hadoop-env.sh1$ vi $HADOOP_HOME/etc/hadoop/hadoop-env.sh 添加配置 1export LD_LIBRARY_PATH=/usr/local/hadoop/lzo/lib 修改core-site.xml1$ vi $HADOOP_HOME/etc/hadoop/core-site.xml 添加配置 1234567891011121314&lt;property&gt; &lt;name&gt;io.compression.codecs&lt;/name&gt; &lt;value&gt;org.apache.hadoop.io.compress.GzipCodec, org.apache.hadoop.io.compress.DefaultCodec, com.hadoop.compression.lzo.LzoCodec, com.hadoop.compression.lzo.LzopCodec, org.apache.hadoop.io.compress.BZip2Codec &lt;/value&gt;&lt;/property&gt; &lt;property&gt; &lt;name&gt;io.compression.codec.lzo.class&lt;/name&gt; &lt;value&gt;com.hadoop.compression.lzo.LzoCodec&lt;/value&gt;&lt;/property&gt; 修改mapred-site.xml123456789101112&lt;property&gt; &lt;name&gt;mapred.compress.map.output&lt;/name&gt; &lt;value&gt;true&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;mapred.map.output.compression.codec&lt;/name&gt; &lt;value&gt;com.hadoop.compression.lzo.LzoCodec&lt;/value&gt;&lt;/property&gt;&lt;property&gt; &lt;name&gt;mapred.child.env&lt;/name&gt; &lt;value&gt;LD_LIBRARY_PATH=/usr/local/hadoop/lzo/lib&lt;/value&gt;&lt;/property&gt; 至此我们就完成了LZO的安装了，如果想看如何使用 测试LZO的index功能]]></content>
+      <categories>
+        <category>作业</category>
+      </categories>
+      <tags>
+        <tag>sqoop</tag>
+        <tag>hdfs</tag>
+        <tag>lzo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试LZO的index功能]]></title>
+    <url>%2F2018%2F12%2F09%2F%E6%B5%8B%E8%AF%95LZO%E7%9A%84index%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[题目请测试LZO的index功能​ a) 练习lzo的index如何使用(hadoop-lzo.jar)​ b) block是128M，你的lzo数据&gt;128，请使用一个shell造出来这个数据​ c) 当做wc的input，观察是否是2个map task 环境Linux版本： CentOS 6.5 jdk版本： JDK1.8 hadoop版本： 2.6.0-cdh5.7.0 一份数据：page_views.dat 18.1M 上传数据123$ cd ~/data## 这个目录上传我们page_views.dat$ rz 放大数据12$ touch create_data.sh$ vi create_data.sh 将我们的数据放大100倍 12345678910#!/bin/bashbasepath=$(cd `dirname $0`; pwd)if [ "$basepath" != "/home/hadoop/data" ];then exitfirm -f page_big900.datfor ((a=1;a&lt;=100;a++))do cat page_views.dat &gt;&gt;page_big900.datdone 运行脚本 1$ sh create_data.sh 压缩数据1$ lzop -9v page_big900.dat]]></content>
+      <categories>
+        <category>作业</category>
+      </categories>
+      <tags>
+        <tag>sqoop</tag>
+        <tag>hdfs</tag>
+        <tag>lzo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[sqoop从mysql导入到HDFS]]></title>
+    <url>%2F2018%2F12%2F07%2Fsqoop%E4%BB%8Emysql%E5%AF%BC%E5%85%A5%E5%88%B0HDFS%2F</url>
+    <content type="text"><![CDATA[题目sqoop从mysql导入数据到HDFS，请使用snappy压缩​ a) 练习sqoop的用法​ b) 安装snappy并整合使用 环境Linux版本： CentOS 6.5 jdk版本： JDK1.8 hadoop版本： 2.6.0-cdh5.7.0 sqoop版本：1.4.6-cdh5.7.0 hive版本： 1.1.0-cdh5.7.0 mysql版本： 5.6.23 一份数据：page_views.dat 18.1M 检查snappy是否已经安装1$ hadoop checknative 如果你的环境还没有snappy类库请参考编译hadoop源码 创建一张表在mysql 上面创建一张表用来存放我们的数据 1234567891011CREATE TABLE sqoop_export_test( id int PRIMARY KEY NOT NULL auto_increment, event_time datetime, target_url varchar(1000), acc_token varchar(100), aim_url varchar(1000), ip_address varchar(100), comment varchar(100), some_no int) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 注意： 如果数据中存在中文记得加字符集编码 上传数据1234$ cd ~/data## 这个目录上传我们page_views.dat$ rz$ hdfs dfs -put page_views.dat /usr/tmp/ 将数据传到mysql1234567891011$ sqoop export \ --connect jdbc:mysql://192.168.137.189:3306/hive \ --username root \ --password 123456 \ --mapreduce-job-name test1 \ --table sqoop_export_test \ --columns 'event_time,target_url,acc_token,aim_url,ip_address,comment,some_no' \ --export-dir /user/tmp/page_views.dat \ --input-null-string '\\N' \ --input-null-non-string '\\N' \ --input-fields-terminated-by '\t' 将数据从mysql导入hive1234567891011121314$ sqoop import \ --connect jdbc:mysql://192.168.137.189:3306/hive \ --username root \ --password 123456 \ --m 1 \ --mapreduce-job-name aaaa \ --table sqoop_export_test \ --columns 'event_time,target_url,acc_token,aim_url,ip_address,comment,some_no' \ --compression-codec 'snappy' \ --target-dir /user/hadoop/SQOOP_SNAPPY \ --fields-terminated-by ',' \ --delete-target-dir \ --null-non-string '' \ --null-string '' 完成1$ hdfs dfs -ls /user/hadoop/SQOOP_SNAPPY 1$ hdfs dfs -text /user/hadoop/SQOOP_SNAPPY/part-m-00000.snappy 至此，我们完成了sqoop从mysql导入数据到HDFS，以sqoop压缩格式导入。]]></content>
+      <categories>
+        <category>作业</category>
+      </categories>
+      <tags>
+        <tag>sqoop</tag>
+        <tag>snappy</tag>
+        <tag>hdfs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[5.编译hadoop源码]]></title>
     <url>%2F2018%2F12%2F04%2F5.%E7%BC%96%E8%AF%91hadoop%E6%BA%90%E7%A0%81%2F</url>
     <content type="text"><![CDATA[上次我们说到了文件压缩和文件格式，为了本地native包不为空，我们决定自己编译一下Hadoop源码。 环境准备Linux环境：CentOS 6.5 jdk版本：jdk1.7（注：pom文件里面很多注明了1.7，所以最好用1.7编译） maven版本：apache-maven-3.6.0 Hadoop版本：hadoop-2.6.0-cdh5.7.0 依赖jar包库:repo 编译准备编译前我们需要做如下几步： 创建hadoop用户，并在家目录创建app source software repo等目录 部署JAVA环境 安装maven(记得修改本地仓库地址和添加一个阿里maven仓库) 安装Protocol Buffer 2.5.0 前三步我就不写了，我们直接讲如何安装Protocol Buffer 2.5.0 安装Protocol Buffer 2.5.0首先下载Protocol Buffer,这里我已经放到云盘，大家需要自己下载。也可以去官网找。 进到相关目录12# su - hadoop$ cd ~/software 使用rz命令上传1$ rz 解压1$ tar -xzvf protobuf-2.5.0.tar.gz -C ../source 进行安装使用root安装一下类库和命令(如果已经存在可以略过) 123$ exit# yum install -y gcc gcc-c++ make cmake# su - hadoop 回到我们的需要编译的目录 1$ cd ~/source/protobuf-2.5.0 指定安装目录 1$ ./configure --prefix=/home/hadoop/app/protobuf-2.5.0 开始安装 1$ make &amp;&amp; make install 配置用户变量 1$ vi ~/.bash_profile 添加如下语句 12export PROTOC_HOME=/home/hadoop/app/protobuf-2.5.0export PATH=$PROTOC_HOME/bin:$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH 使环境变量生效 1$ source ~/.bash_profile 验证 1$ protoc --version 安装其它依赖新开一个窗口，使用root安装一些类库 12# yum install -y openssl openssl-devel svn ncurses-devel zlib-devel libtool# yum install -y snappy snappy-devel bzip2 bzip2-devel lzo lzo-devel lzop autoconf automake 编译Hadoop进入相关目录1$ cd ~/software 使用rz命令上传hadoop-2.6.0-cdh5.7.01$ rz 解压1$ tar -zxvf hadoop-2.6.0-cdh5.7.0-src.tar.gz -C ../source 进行安装上传repo库 1234$ cd ~/repo$ rz$ tar -zxvf repo.tar.gz$ mv repo ./ 修改maven的setting.xml，将你的仓库地址指向repo这个目录 1$ vi $MAVEN_HOME/conf/setting.xml 1&lt;localRepository&gt;/home/hadoop/repo&lt;/localRepository&gt; 进入相关目录 12$ cd ~/source/hadoop-2.6.0-cdh5.7.0$ mvn clean package -Pdist,native -DskipTests -Dtar 注意： -DskipTests ：跳过测试-Dtar ：打成tar包 编译成功 注意：如果不使用提供的jar库来编译，过程中会出现很多jar下载失败！ 编译之后我们需要的包在以下的目录，将它拷贝到我们的app下面就可以开始我们hadoop部署了！ 1cp /home/hadoop/source/hadoop-2.6.0-cdh5.7.0/hadoop-dist/target/hadoop-2.6.0-cdh5.7.0.tar.gz ~/app/]]></content>
@@ -42,7 +81,7 @@
   <entry>
     <title><![CDATA[linux ssh互信配置]]></title>
     <url>%2F2018%2F11%2F27%2Flinux%20ssh%E4%BA%92%E4%BF%A1%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen 在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rsa.pub&gt;&gt; /root/.ssh/authorized_keys 然后将其他台机子上的id_rsa.pub内容,手动copy到第一台的authorized_keys文件中 先把第二台的公钥拉取过来,需要键入密码 1# scp root@hadoop002:/root/.ssh/id_rsa.pub id_rsa.pub002 再把第三台的公钥拉取过来,需要键入密码 1# scp root@hadoop003:/root/.ssh/id_rsa.pub id_rsa.pub003 然后将其内容复制到authorized_keys中 12# cat id_rsa.pub002 &gt;&gt; authorized_keys# cat id_rsa.pub003 &gt;&gt; authorized_keys 然后将authorized_keys文件发送给另外两台机子,需要键入密码 12# scp authorized_keys root@hadoop002:/root/.ssh/# scp authorized_keys root@hadoop003:/root/.ssh/ 然后删除之前拉取的id_rsa.pub002,id_rsa.pub003文件 12# rm -f id_rsa.pub002# rm -f id_rsa.pub003 然后3台机子一起赋权 12# chmod 700 -R ~/.ssh# chmod 600 ~/.ssh/authorized_keys 验证,第一次使用ssh会需要键入yes 123# ssh root@hadoop001 date# ssh root@hadoop002 date# ssh root@hadoop003 date]]></content>
+    <content type="text"><![CDATA[环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen 生成一个authorized_keys在第一个hadoop001上面，生成一个authorized_keys文件 12# cd ~/.ssh# cat ~/.ssh/id_rsa.pub&gt;&gt; ~/.ssh/authorized_keys 然后将其他台机子上的id_rsa.pub内容,手动copy到第一台的authorized_keys文件中 先把第二台的公钥拉取过来,需要键入密码 1# scp root@hadoop002:~/.ssh/id_rsa.pub id_rsa.pub002 再把第三台的公钥拉取过来,需要键入密码 1# scp root@hadoop003:~/.ssh/id_rsa.pub id_rsa.pub003 然后将其内容复制到authorized_keys中 12# cat id_rsa.pub002 &gt;&gt; authorized_keys# cat id_rsa.pub003 &gt;&gt; authorized_keys 然后将authorized_keys文件发送给另外两台机子,需要键入密码 12# scp authorized_keys root@hadoop002:~/.ssh/# scp authorized_keys root@hadoop003:~/.ssh/ 然后删除之前拉取的id_rsa.pub002,id_rsa.pub003文件 12# rm -f id_rsa.pub002# rm -f id_rsa.pub003 然后3台机子一起赋权 12# chmod 700 -R ~/.ssh# chmod 600 ~/.ssh/authorized_keys 验证,第一次使用ssh会需要键入yes 123# ssh root@hadoop001 date# ssh root@hadoop002 date# ssh root@hadoop003 date]]></content>
       <categories>
         <category>Vmware安装CentOS</category>
       </categories>

@@ -108,23 +108,23 @@
 
 
 
-  <meta name="description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rs">
+  <meta name="description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  生成一个authorized_keys在第一个hadoop001上面，生成一个authorized_keys文件 12# cd ~/.ssh# cat ~">
 <meta name="keywords" content="vmware,centos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux ssh互信配置">
 <meta property="og:url" content="http://yoursite.com/2018/11/27/linux ssh互信配置/index.html">
 <meta property="og:site_name" content="我的第一个博客">
-<meta property="og:description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rs">
+<meta property="og:description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  生成一个authorized_keys在第一个hadoop001上面，生成一个authorized_keys文件 12# cd ~/.ssh# cat ~">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/5.png">
 <meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/6.png">
 <meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/7.png">
 <meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/8.png">
 <meta property="og:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/9.png">
-<meta property="og:updated_time" content="2018-11-26T17:37:32.378Z">
+<meta property="og:updated_time" content="2018-12-08T12:02:16.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux ssh互信配置">
-<meta name="twitter:description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  在第一个hadoop001上面，生成一个authorized_keys文件 12# cd /root/.ssh# cat /root/.ssh/id_rs">
+<meta name="twitter:description" content="环境hadoop001: 192.168.137.190 hadoop002: 192.168.137.191 hadoop003: 192.168.137.192 执行ssh-keygen在3台机子上都执行下面命令1# ssh-keygen  生成一个authorized_keys在第一个hadoop001上面，生成一个authorized_keys文件 12# cd ~/.ssh# cat ~">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/27/linux%20ssh互信配置/5.png">
 
 
@@ -429,12 +429,24 @@
                 
               
 
-              <time title="创建时间：2018-11-27 00:56:13 / 修改时间：01:37:32" itemprop="dateCreated datePublished" datetime="2018-11-27T00:56:13+08:00">2018-11-27</time>
+              <time title="创建时间：2018-11-27 00:56:13" itemprop="dateCreated datePublished" datetime="2018-11-27T00:56:13+08:00">2018-11-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-08 20:02:16" itemprop="dateModified" datetime="2018-12-08T20:02:16+08:00">2018-12-08</time>
               
             
           </span>
@@ -490,20 +502,20 @@
 <p>hadoop003: 192.168.137.192</p>
 <h1 id="执行ssh-keygen"><a href="#执行ssh-keygen" class="headerlink" title="执行ssh-keygen"></a>执行ssh-keygen</h1><p>在3台机子上都执行下面命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ssh-keygen</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2018/11/27/linux ssh互信配置/5.png" alt=""></p>
-<p>在第一个hadoop001上面，生成一个<strong>authorized_keys</strong>文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cd /root/.ssh</span><br><span class="line"><span class="meta">#</span> cat /root/.ssh/id_rsa.pub&gt;&gt; /root/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<h1 id="生成一个authorized-keys"><a href="#生成一个authorized-keys" class="headerlink" title="生成一个authorized_keys"></a>生成一个authorized_keys</h1><p>在第一个hadoop001上面，生成一个<strong>authorized_keys</strong>文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cd ~/.ssh</span><br><span class="line"><span class="meta">#</span> cat ~/.ssh/id_rsa.pub&gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/11/27/linux ssh互信配置/6.png" alt=""></p>
 <p>然后将其他台机子上的id_rsa.pub内容,手动copy到第一台的authorized_keys文件中</p>
 <p>先把第二台的公钥拉取过来,需要键入密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp root@hadoop002:/root/.ssh/id_rsa.pub id_rsa.pub002</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp root@hadoop002:~/.ssh/id_rsa.pub id_rsa.pub002</span><br></pre></td></tr></table></figure>
 <p>再把第三台的公钥拉取过来,需要键入密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp root@hadoop003:/root/.ssh/id_rsa.pub id_rsa.pub003</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp root@hadoop003:~/.ssh/id_rsa.pub id_rsa.pub003</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/11/27/linux ssh互信配置/7.png" alt=""></p>
 <p>然后将其内容复制到authorized_keys中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cat id_rsa.pub002 &gt;&gt; authorized_keys</span><br><span class="line"><span class="meta">#</span> cat id_rsa.pub003 &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/11/27/linux ssh互信配置/8.png" alt=""></p>
 <p>然后将authorized_keys文件发送给另外两台机子,需要键入密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp authorized_keys root@hadoop002:/root/.ssh/</span><br><span class="line"><span class="meta">#</span> scp authorized_keys root@hadoop003:/root/.ssh/</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> scp authorized_keys root@hadoop002:~/.ssh/</span><br><span class="line"><span class="meta">#</span> scp authorized_keys root@hadoop003:~/.ssh/</span><br></pre></td></tr></table></figure>
 <p>然后删除之前拉取的id_rsa.pub002,id_rsa.pub003文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> rm -f id_rsa.pub002</span><br><span class="line"><span class="meta">#</span> rm -f id_rsa.pub003</span><br></pre></td></tr></table></figure>
 <p>然后3台机子一起赋权</p>
@@ -631,7 +643,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -654,7 +666,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -685,7 +699,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -720,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行ssh-keygen"><span class="nav-number">2.</span> <span class="nav-text">执行ssh-keygen</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行ssh-keygen"><span class="nav-number">2.</span> <span class="nav-text">执行ssh-keygen</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成一个authorized-keys"><span class="nav-number">3.</span> <span class="nav-text">生成一个authorized_keys</span></a></li></ol></div>
             
 
           </div>
