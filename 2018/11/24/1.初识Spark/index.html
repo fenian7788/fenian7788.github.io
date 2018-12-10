@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="我的第一个博客">
 <meta property="og:description" content="what’s Spark​    Apache Spark™ is a unified analytics engine for large-scale data processing. Speed Run workloads 100x faster. Apache Spark achieves high performance for both batch and streaming data,">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-24T11:48:20.044Z">
+<meta property="og:updated_time" content="2018-12-10T13:01:13.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1.初识Spark">
 <meta name="twitter:description" content="what’s Spark​    Apache Spark™ is a unified analytics engine for large-scale data processing. Speed Run workloads 100x faster. Apache Spark achieves high performance for both batch and streaming data,">
@@ -423,12 +423,24 @@
                 
               
 
-              <time title="创建时间：2018-11-24 09:09:19 / 修改时间：19:48:20" itemprop="dateCreated datePublished" datetime="2018-11-24T09:09:19+08:00">2018-11-24</time>
+              <time title="创建时间：2018-11-24 09:09:19" itemprop="dateCreated datePublished" datetime="2018-11-24T09:09:19+08:00">2018-11-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-10 21:01:13" itemprop="dateModified" datetime="2018-12-10T21:01:13+08:00">2018-12-10</time>
               
             
           </span>
@@ -485,10 +497,13 @@
 <p>Apache Spark achieves high performance for both batch and streaming data, using a state-of-the-art DAG scheduler, a query optimizer, and a physical execution engine.</p>
 </blockquote>
 <p>​    Spark是运行在内存上的高速的计算引擎，会比Hadoop快100多倍</p>
-<h2 id="Ease-of-Use"><a href="#Ease-of-Use" class="headerlink" title="Ease of Use"></a>Ease of Use</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = spark.read.json(<span class="string">"logs.json"</span>) df.where(<span class="string">"age &gt; 21"</span>)   .select(<span class="string">"name.first"</span>).show()</span><br></pre></td></tr></table></figure>
+<h2 id="Ease-of-Use"><a href="#Ease-of-Use" class="headerlink" title="Ease of Use"></a>Ease of Use</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df = spark.read.json(<span class="string">"logs.json"</span>) </span><br><span class="line">df.where(<span class="string">"age &gt; 21"</span>)   </span><br><span class="line">.select(<span class="string">"name.first"</span>).show()</span><br></pre></td></tr></table></figure>
 <p>​    大部分应用都是用Java、Scala、Python、R。Spark还提供了80个高级算子，是我们容易搭建起分布式APP</p>
 <h2 id="Generality"><a href="#Generality" class="headerlink" title="Generality"></a>Generality</h2><p>​    支持Spark SQL,Streaming 和 complex analytics.</p>
-<h2 id="Run-Everywhere"><a href="#Run-Everywhere" class="headerlink" title="Run Everywhere"></a>Run Everywhere</h2><p>​    Spark可以跑在Yarn. Mesos,Kubernetes 独立集群或者云服务。它能访问各种数据源</p>
+<h2 id="Run-Everywhere"><a href="#Run-Everywhere" class="headerlink" title="Run Everywhere"></a>Run Everywhere</h2><blockquote>
+<p>You can run Spark using its <a href="http://spark.apache.org/docs/latest/spark-standalone.html" target="_blank" rel="noopener">standalone cluster mode</a>, on <a href="https://github.com/amplab/spark-ec2" target="_blank" rel="noopener">EC2</a>, on <a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="_blank" rel="noopener">Hadoop YARN</a>, on <a href="https://mesos.apache.org/" target="_blank" rel="noopener">Mesos</a>, or on <a href="https://kubernetes.io/" target="_blank" rel="noopener">Kubernetes</a>. Access data in <a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html" target="_blank" rel="noopener">HDFS</a>, <a href="https://alluxio.org/" target="_blank" rel="noopener">Alluxio</a>, <a href="https://cassandra.apache.org/" target="_blank" rel="noopener">Apache Cassandra</a>, <a href="https://hbase.apache.org/" target="_blank" rel="noopener">Apache HBase</a>, <a href="https://hive.apache.org/" target="_blank" rel="noopener">Apache Hive</a>, and hundreds of other data sources.</p>
+</blockquote>
+<p>​    Spark可以跑在Yarn. Mesos,Kubernetes 独立集群或者云服务。它能访问各种数据源。</p>
 
       
     </div>
@@ -607,7 +622,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -679,7 +694,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
