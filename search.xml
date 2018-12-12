@@ -56,8 +56,8 @@
       </categories>
       <tags>
         <tag>sqoop</tag>
-        <tag>lzo</tag>
         <tag>hdfs</tag>
+        <tag>lzo</tag>
       </tags>
   </entry>
   <entry>
@@ -69,8 +69,8 @@
       </categories>
       <tags>
         <tag>sqoop</tag>
-        <tag>lzo</tag>
         <tag>hdfs</tag>
+        <tag>lzo</tag>
       </tags>
   </entry>
   <entry>
@@ -82,8 +82,8 @@
       </categories>
       <tags>
         <tag>sqoop</tag>
-        <tag>hdfs</tag>
         <tag>snappy</tag>
+        <tag>hdfs</tag>
       </tags>
   </entry>
   <entry>
