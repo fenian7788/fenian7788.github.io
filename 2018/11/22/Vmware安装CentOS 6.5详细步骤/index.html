@@ -631,20 +631,20 @@
 <p>44.设置我们的虚拟网络的网关，在42步骤的界面上选择NAT设置</p>
 <p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/45.png" alt=""></p>
 <p>45.我们需要配置我们虚拟机的ip</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=00:0C:29:65:28:D9</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">UUID=c206e490-daa4-45a3-9c24-372709e38ee5</span><br><span class="line">ONBOOT=yes</span><br><span class="line">NM_CONTROLLED=no</span><br><span class="line"><span class="meta">#</span>BOOTPROTO=dhcp</span><br><span class="line">BOOTPROTO="static"</span><br><span class="line">IPADDR=192.168.137.190</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.137.2</span><br><span class="line">DNS1=192.168.43.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vi /etc/sysconfig/network-scripts/ifcfg-eth0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=00:0C:29:65:28:D9</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">UUID=c206e490-daa4-45a3-9c24-372709e38ee5</span><br><span class="line">ONBOOT=yes</span><br><span class="line">NM_CONTROLLED=no</span><br><span class="line"><span class="meta">#</span><span class="bash">BOOTPROTO=dhcp</span></span><br><span class="line">BOOTPROTO="static"</span><br><span class="line">IPADDR=192.168.137.190</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.137.2</span><br><span class="line">DNS1=192.168.43.1</span><br></pre></td></tr></table></figure>
 <p>​    其中IPADDR的地址要在我们43步骤设置的范围里面，NETMASK一般是255.255.255.0，GATEWAY是我们设置44步骤，DNS1是我们windows cmd里面打</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig -all</span><br></pre></td></tr></table></figure>
 <p>获取DNS，如图所示</p>
 <p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/46.png" alt=""></p>
 <p>46.关掉防火墙</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>service iptables stop</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">service iptables stop</span></span><br></pre></td></tr></table></figure>
 <p>47.禁止自启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chkconfig iptables off</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">chkconfig iptables off</span></span><br></pre></td></tr></table></figure>
 <p>48.网卡重启</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>service network restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">service network restart</span></span><br></pre></td></tr></table></figure>
 <p>49.我们可以试试ping 一下<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ping www.baidu.com</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/11/22/Vmware安装CentOS 6.5详细步骤/47.png" alt=""></p>
 <p>如图所示，我们的centOS 就部署好了！</p>
 
@@ -758,7 +758,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -832,7 +832,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

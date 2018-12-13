@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="题目sqoop从mysql导入数据到HDFS，请使用snappy压缩​    a) 练习sqoop的用法​    b) 安装snappy并整合使用 环境Linux版本： CentOS 6.5  jdk版本： JDK1.8 hadoop版本： 2.6.0-cdh5.7.0 sqoop版本：1.4.6-cdh5.7.0 hive版本： 1.1.0-cdh5.7.0 mysql版本： 5.6.23 一份">
-<meta name="keywords" content="sqoop,snappy,hdfs">
+<meta name="keywords" content="sqoop,hdfs,snappy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqoop从mysql导入到HDFS">
 <meta property="og:url" content="http://yoursite.com/2018/12/07/sqoop从mysql导入到HDFS/index.html">
@@ -505,21 +505,21 @@
 <p>hive版本： 1.1.0-cdh5.7.0</p>
 <p>mysql版本： 5.6.23</p>
 <p>一份数据：page_views.dat  18.1M</p>
-<h1 id="检查snappy是否已经安装"><a href="#检查snappy是否已经安装" class="headerlink" title="检查snappy是否已经安装"></a>检查snappy是否已经安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hadoop checknative</span><br></pre></td></tr></table></figure>
+<h1 id="检查snappy是否已经安装"><a href="#检查snappy是否已经安装" class="headerlink" title="检查snappy是否已经安装"></a>检查snappy是否已经安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hadoop checknative</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/07/sqoop从mysql导入到HDFS/5.png" alt=""></p>
 <p>如果你的环境还没有snappy类库请参考<a href="https://fenian7788.github.io/2018/12/04/5.%E7%BC%96%E8%AF%91hadoop%E6%BA%90%E7%A0%81/" target="_blank">编译hadoop源码 </a></p>
 <h1 id="创建一张表"><a href="#创建一张表" class="headerlink" title="创建一张表"></a>创建一张表</h1><p>在mysql 上面创建一张表用来存放我们的数据</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> sqoop_export_test</span><br><span class="line">(</span><br><span class="line">   <span class="keyword">id</span> <span class="built_in">int</span> PRIMARY <span class="keyword">KEY</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> auto_increment,</span><br><span class="line">   event_time datetime,</span><br><span class="line">   target_url <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">   acc_token <span class="built_in">varchar</span>(<span class="number">100</span>),</span><br><span class="line">   aim_url <span class="built_in">varchar</span>(<span class="number">1000</span>),</span><br><span class="line">   ip_address <span class="built_in">varchar</span>(<span class="number">100</span>),</span><br><span class="line">   <span class="keyword">comment</span> <span class="built_in">varchar</span>(<span class="number">100</span>),</span><br><span class="line">   some_no <span class="built_in">int</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span>  <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 AUTO_INCREMENT=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <font color="red">注意： 如果数据中存在中文记得加字符集编码</font>
 
-<h1 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd ~/data</span><br><span class="line"><span class="meta">#</span># 这个目录上传我们page_views.dat</span><br><span class="line"><span class="meta">$</span> rz</span><br><span class="line"><span class="meta">$</span> hdfs dfs -put page_views.dat /usr/tmp/</span><br></pre></td></tr></table></figure>
+<h1 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/data</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 这个目录上传我们page_views.dat</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hdfs dfs -put page_views.dat /usr/tmp/</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/07/sqoop从mysql导入到HDFS/1.png" alt=""></p>
-<h1 id="将数据传到mysql"><a href="#将数据传到mysql" class="headerlink" title="将数据传到mysql"></a>将数据传到mysql</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sqoop export \</span><br><span class="line">   --connect jdbc:mysql://192.168.137.189:3306/hive \</span><br><span class="line">   --username root \</span><br><span class="line">   --password 123456 \</span><br><span class="line">   --mapreduce-job-name test1 \</span><br><span class="line">   --table sqoop_export_test \</span><br><span class="line">   --columns 'event_time,target_url,acc_token,aim_url,ip_address,comment,some_no' \</span><br><span class="line">   --export-dir /user/tmp/page_views.dat \</span><br><span class="line">   --input-null-string '\\N' \</span><br><span class="line">   --input-null-non-string '\\N' \</span><br><span class="line">   --input-fields-terminated-by '\t'</span><br></pre></td></tr></table></figure>
+<h1 id="将数据传到mysql"><a href="#将数据传到mysql" class="headerlink" title="将数据传到mysql"></a>将数据传到mysql</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sqoop <span class="built_in">export</span> \</span></span><br><span class="line">   --connect jdbc:mysql://192.168.137.189:3306/hive \</span><br><span class="line">   --username root \</span><br><span class="line">   --password 123456 \</span><br><span class="line">   --mapreduce-job-name test1 \</span><br><span class="line">   --table sqoop_export_test \</span><br><span class="line">   --columns 'event_time,target_url,acc_token,aim_url,ip_address,comment,some_no' \</span><br><span class="line">   --export-dir /user/tmp/page_views.dat \</span><br><span class="line">   --input-null-string '\\N' \</span><br><span class="line">   --input-null-non-string '\\N' \</span><br><span class="line">   --input-fields-terminated-by '\t'</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/07/sqoop从mysql导入到HDFS/2.png" alt=""></p>
-<h1 id="将数据从mysql导入hive"><a href="#将数据从mysql导入hive" class="headerlink" title="将数据从mysql导入hive"></a>将数据从mysql导入hive</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sqoop import \</span><br><span class="line">   --connect jdbc:mysql://192.168.137.189:3306/hive \</span><br><span class="line">   --username root \</span><br><span class="line">   --password 123456 \</span><br><span class="line">   --m 1 \</span><br><span class="line">   --mapreduce-job-name aaaa \</span><br><span class="line">   --table sqoop_export_test \</span><br><span class="line">   --columns 'event_time,target_url,acc_token,aim_url,ip_address,comment,some_no' \</span><br><span class="line">   --compression-codec 'snappy' \</span><br><span class="line">   --target-dir /user/hadoop/SQOOP_SNAPPY \</span><br><span class="line">   --fields-terminated-by ',' \</span><br><span class="line">   --delete-target-dir \</span><br><span class="line">   --null-non-string '' \</span><br><span class="line">   --null-string ''</span><br></pre></td></tr></table></figure>
-<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hdfs dfs -ls /user/hadoop/SQOOP_SNAPPY</span><br></pre></td></tr></table></figure>
+<h1 id="将数据从mysql导入hive"><a href="#将数据从mysql导入hive" class="headerlink" title="将数据从mysql导入hive"></a>将数据从mysql导入hive</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sqoop import \</span></span><br><span class="line">   --connect jdbc:mysql://192.168.137.189:3306/hive \</span><br><span class="line">   --username root \</span><br><span class="line">   --password 123456 \</span><br><span class="line">   --m 1 \</span><br><span class="line">   --mapreduce-job-name aaaa \</span><br><span class="line">   --table sqoop_export_test \</span><br><span class="line">   --columns 'event_time,target_url,acc_token,aim_url,ip_address,comment,some_no' \</span><br><span class="line">   --compression-codec 'snappy' \</span><br><span class="line">   --target-dir /user/hadoop/SQOOP_SNAPPY \</span><br><span class="line">   --fields-terminated-by ',' \</span><br><span class="line">   --delete-target-dir \</span><br><span class="line">   --null-non-string '' \</span><br><span class="line">   --null-string ''</span><br></pre></td></tr></table></figure>
+<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hdfs dfs -ls /user/hadoop/SQOOP_SNAPPY</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/07/sqoop从mysql导入到HDFS/3.png" alt=""></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hdfs dfs -text /user/hadoop/SQOOP_SNAPPY/part-m-00000.snappy</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hdfs dfs -text /user/hadoop/SQOOP_SNAPPY/part-m-00000.snappy</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/07/sqoop从mysql导入到HDFS/4.png" alt=""></p>
 <p>至此，我们完成了sqoop从mysql导入数据到HDFS，以sqoop压缩格式导入。</p>
 
@@ -547,9 +547,9 @@
           
             <a href="/tags/sqoop/" rel="tag"># sqoop</a>
           
-            <a href="/tags/snappy/" rel="tag"># snappy</a>
-          
             <a href="/tags/hdfs/" rel="tag"># hdfs</a>
+          
+            <a href="/tags/snappy/" rel="tag"># snappy</a>
           
         </div>
       
@@ -644,7 +644,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -718,7 +718,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

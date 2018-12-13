@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="题目请测试LZO的index功能​    a) 练习lzo的index如何使用(hadoop-lzo.jar)​    b) block是128M，你的lzo数据&amp;gt;128，请使用一个shell造出来这个数据​    c) 当做wc的input，观察是否是2个map task 环境Linux版本： CentOS 6.5  jdk版本： JDK1.8 hadoop版本： 2.6.0-cdh5.7">
-<meta name="keywords" content="sqoop,hdfs,lzo">
+<meta name="keywords" content="sqoop,lzo,hdfs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试LZO的index功能">
 <meta property="og:url" content="http://yoursite.com/2018/12/09/测试LZO的index功能/index.html">
@@ -491,25 +491,25 @@
 <p>hadoop版本： 2.6.0-cdh5.7.0</p>
 <p>一份数据：page_views.dat  18.1M</p>
 <p>linux 有LZO类库：<a herf="https://fenian7788.github.io/2018/12/09/%E5%AE%89%E8%A3%85LZO/" target="_blank">安装LZOM</a></p>
-<h1 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd ~/data</span><br><span class="line"><span class="meta">#</span># 这个目录上传我们page_views.dat</span><br><span class="line"><span class="meta">$</span> rz</span><br></pre></td></tr></table></figure>
-<h1 id="放大数据"><a href="#放大数据" class="headerlink" title="放大数据"></a>放大数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> touch create_data.sh</span><br><span class="line"><span class="meta">$</span> vi create_data.sh</span><br></pre></td></tr></table></figure>
+<h1 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/data</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 这个目录上传我们page_views.dat</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rz</span></span><br></pre></td></tr></table></figure>
+<h1 id="放大数据"><a href="#放大数据" class="headerlink" title="放大数据"></a>放大数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> touch create_data.sh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vi create_data.sh</span></span><br></pre></td></tr></table></figure>
 <p>将我们的数据放大100倍</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">basepath=$(cd `dirname $0`; pwd)</span><br><span class="line">if [ "$basepath" != "/home/hadoop/data" ];then</span><br><span class="line"> exit</span><br><span class="line">fi</span><br><span class="line">rm -f page_big900.dat</span><br><span class="line">for ((a=1;a&lt;=100;a++))</span><br><span class="line">do</span><br><span class="line">   cat page_views.dat &gt;&gt;page_big900.dat</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">basepath=$(cd `dirname $0`; pwd)</span><br><span class="line">if [ "$basepath" != "/home/hadoop/data" ];then</span><br><span class="line"> exit</span><br><span class="line">fi</span><br><span class="line">rm -f page_big900.dat</span><br><span class="line">for ((a=1;a&lt;=100;a++))</span><br><span class="line">do</span><br><span class="line">   cat page_views.dat &gt;&gt;page_big900.dat</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <p>运行脚本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sh create_data.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sh create_data.sh</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/09/测试LZO的index功能/2.png" alt=""></p>
-<h1 id="压缩数据"><a href="#压缩数据" class="headerlink" title="压缩数据"></a>压缩数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> lzop -9v page_big900.dat</span><br></pre></td></tr></table></figure>
+<h1 id="压缩数据"><a href="#压缩数据" class="headerlink" title="压缩数据"></a>压缩数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> lzop -9v page_big900.dat</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/09/测试LZO的index功能/3.png" alt=""></p>
-<h1 id="上传到HDFS"><a href="#上传到HDFS" class="headerlink" title="上传到HDFS"></a>上传到HDFS</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hdfs dfs -mkdir /user/hadoop/LZO</span><br><span class="line"><span class="meta">$</span> hdfs dfs -put page_big900.dat.lzo /user/hadoop/LZO</span><br></pre></td></tr></table></figure>
+<h1 id="上传到HDFS"><a href="#上传到HDFS" class="headerlink" title="上传到HDFS"></a>上传到HDFS</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hdfs dfs -mkdir /user/hadoop/LZO</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hdfs dfs -put page_big900.dat.lzo /user/hadoop/LZO</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/09/测试LZO的index功能/6.png" alt=""></p>
-<h1 id="建立索引文件"><a href="#建立索引文件" class="headerlink" title="建立索引文件"></a>建立索引文件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hadoop jar $HADOOP_HOMOE/share/hadoop/common/hadoop-lzo-0.4.20-SNAPSHOT.jar com.hadoop.compression.lzo.LzoIndexer /user/hadoop/LZO/page_big900.dat.lzo</span><br></pre></td></tr></table></figure>
+<h1 id="建立索引文件"><a href="#建立索引文件" class="headerlink" title="建立索引文件"></a>建立索引文件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hadoop jar <span class="variable">$HADOOP_HOMOE</span>/share/hadoop/common/hadoop-lzo-0.4.20-SNAPSHOT.jar com.hadoop.compression.lzo.LzoIndexer /user/hadoop/LZO/page_big900.dat.lzo</span></span><br></pre></td></tr></table></figure>
 <font color="red">注:也可以使用集群的方式</font>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hadoop jar $HADOOP_HOMOE/share/hadoop/common/hadoop-lzo-0.4.20-SNAPSHOT.jar com.hadoop.compression.lzo.DistributedLzoIndexer /home/wyp/input/cite.txt.lzo</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hadoop jar <span class="variable">$HADOOP_HOMOE</span>/share/hadoop/common/hadoop-lzo-0.4.20-SNAPSHOT.jar com.hadoop.compression.lzo.DistributedLzoIndexer /home/wyp/input/cite.txt.lzo</span></span><br></pre></td></tr></table></figure>
 <p>此时会在hdfs目下生成一个index文件</p>
 <p><img src="/2018/12/09/测试LZO的index功能/7.png" alt=""></p>
 <h1 id="当做WC的input，运行MR作业"><a href="#当做WC的input，运行MR作业" class="headerlink" title="当做WC的input，运行MR作业"></a>当做WC的input，运行MR作业</h1><p>当做wc的input，观察是否是以128M为一个split形成一个map task，此次任务按计算应该有 640/128 = 5个</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> yarn jar /home/hadoop/app/hadoop-2.6.0-cdh5.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0-cdh5.7.0.jar wordcount \</span><br><span class="line"> -D mapreduce.job.inputformat.class=com.hadoop.mapreduce.LzoTextInputFormat \</span><br><span class="line"> -D mapred.output.compress=true \</span><br><span class="line"> -D mapred.output.compression.codec=com.hadoop.compression.lzo.LzopCodec \</span><br><span class="line"> /user/hadoop/LZO/page_big900.dat.lzo /user/hadoop/LZO/output</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> yarn jar /home/hadoop/app/hadoop-2.6.0-cdh5.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0-cdh5.7.0.jar wordcount \</span></span><br><span class="line"> -D mapreduce.job.inputformat.class=com.hadoop.mapreduce.LzoTextInputFormat \</span><br><span class="line"> -D mapred.output.compress=true \</span><br><span class="line"> -D mapred.output.compression.codec=com.hadoop.compression.lzo.LzopCodec \</span><br><span class="line"> /user/hadoop/LZO/page_big900.dat.lzo /user/hadoop/LZO/output</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/09/测试LZO的index功能/8.png" alt=""></p>
 <p>至此，测试完成。</p>
 
@@ -537,9 +537,9 @@
           
             <a href="/tags/sqoop/" rel="tag"># sqoop</a>
           
-            <a href="/tags/hdfs/" rel="tag"># hdfs</a>
-          
             <a href="/tags/lzo/" rel="tag"># lzo</a>
+          
+            <a href="/tags/hdfs/" rel="tag"># hdfs</a>
           
         </div>
       
@@ -634,7 +634,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -708,7 +708,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
